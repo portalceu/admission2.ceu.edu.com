@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | CEU Admission</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+
+    /* Pink top bar */
+    .topbar {
+      background-color: #f06292;
+      height: 35px;
+      display: none; /* shown in mobile via media query */
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #21125e;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    /* Logo */
+    .logo {
+      height: 70px;
+      object-fit: contain;
+      margin-left: 20px;
+    }
+
+    /* Navigation links */
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid #f06292;
+      padding-bottom: 3px;
+    }
+
+    /* Menu extra (hamburger items) wrapper */
+    .menu-extra-wrap {
+      display: none; /* hidden by default (desktop) */
+    }
+
+    /* Hamburger (in pink bar on mobile) */
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===================== REGISTER PAGE ===================== */
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 40px;
+    }
+
+    /* Sign Up Box */
+    .signup-box {
+      background-color: #f3f8fe;
+      padding: 30px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .signup-box h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .signup-box label {
+      display: block;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .signup-box input,
+    .signup-box select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .register-btn {
+      width: 100%;
+      background-color: #f06292;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .register-btn:hover {
+      background-color: #e34b7b;
+    }
+
+    .login-note {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+    }
+
+    .login-link {
+      background-color: #f06292;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 5px 15px;
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    /* Applicant Type Section */
+    .applicant-box {
+      background-color: #f3f8fe;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 650px;
+    }
+
+    .applicant-box h2 {
+      margin-bottom: 15px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .applicant-box p {
+      font-size: 14px;
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .applicant-box b {
+      color: #f06292;
+    }
+
+    .applicant-box ul {
+      margin: 10px 0 15px 20px;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #21125e;
+      color: #fff;
+      margin-top: 40px;
+      font-size: 13px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .campus {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+
+    .campus b {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .connect {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .social {
+      margin: 10px 0;
+    }
+
+    .social a img {
+      width: 30px;
+      margin: 0 5px;
+    }
+
+    .footer-bottom {
+      text-align: left;
+      padding: 12px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 12px;
+    }
+
+    /* =====================
+       RESPONSIVE / MOBILE
+       ===================== */
+    @media (max-width: 768px) {
+      /* show pink topbar with hamburger */
+      .topbar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f06292;
+        height: 40px;
+        padding: 0 15px;
+      }
+
+      .topbar .hamburger {
+        display: block;
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 6px;
+      }
+
+      .logo {
+        height: 60px;
+        margin-left: 0;
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        background: #21125e;
+        padding: 8px 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        font-size: 14px;
+        padding: 6px 8px;
+        white-space: nowrap;
+      }
+
+      .menu-extra-wrap {
+        display: none;
+        width: 100%;
+      }
+
+      nav.show .menu-extra-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 6px;
+        background: #21125e;
+      }
+
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .signup-box,
+      .applicant-box {
+        width: 100%;
+        max-width: 95%;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .campus,
+      .connect {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <header>
+    <div class="nav-left">
+      <img src="images/ceu-logo.png" alt="CEU Logo" class="logo" />
+    </div>
+    <nav id="navMenu">
+      <a href="payment.html">PAYMENT CHANNELS</a>
+      <a href="index.html">CONTACT US</a>
+      <a href="#" class="active">REGISTER / LOG IN</a>
+      <div class="menu-extra-wrap">
+        <a class="menu-extra" href="#">ADMISSION HOME</a>
+        <a class="menu-extra" href="#">ABOUT CEU ADMISSION</a>
+        <a class="menu-extra" href="#">PAYMENT CHANNELS</a>
+        <a class="menu-extra" href="#">CONTACT US</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="signup-box">
+      <h2>SIGN UP</h2>
+      <form>
+        <label>Username <span style="color:red">*</span></label>
+        <input type="text" required />
+
+        <label>E-mail address <span style="color:red">*</span></label>
+        <input type="email" required />
+
+        <label>Password <span style="color:red">*</span></label>
+        <input type="password" required />
+
+        <label>Re-Type Password <span style="color:red">*</span></label>
+        <input type="password" required />
+
+        <label>Application Type <span style="color:red">*</span></label>
+        <select required>
+          <option value="">- Select a value -</option>
+          <option>Freshman</option>
+          <option>Transferee</option>
+          <option>Second Degree</option>
+          <option>Graduate School Applicant</option>
+          <option>Foreign Applicant</option>
+          <option>Filipino Who Studied Abroad</option>
+        </select>
+
+        <button type="submit" class="register-btn">Create new account</button>
+      </form>
+
+      <div class="login-note">
+        Already have an account?<br />
+        <a href="index.html" class="login-link">LOG IN</a>
+      </div>
+    </div>
+
+    <div class="applicant-box">
+      <h2>APPLICANT TYPE</h2>
+      <p><b>FRESHMAN.</b> A high school graduate who enrolls in a degree program for the first time.</p>
+      <p><b>TRANSFEREE.</b> An applicant who enrolls in a degree program after having attended another college/university.</p>
+      <p><b>SECOND DEGREE.</b> An applicant who seeks admission to another degree program as a second degree.</p>
+      <p><b>GRADUATE SCHOOL APPLICANT.</b> An individual who seeks admission to a graduate program, such as Master’s or Doctoral Program.</p>
+      <p><b>FOREIGN APPLICANT.</b> A non-resident/resident alien who comes to the Philippines and seeks admission as foreign applicant.</p>
+      <p><b>Reminders:</b><br>Foreigners who are applying for Graduate School programs should apply as Graduate School Applicants, while Foreigners who applied for undergraduate degree programs should apply as Foreign Applicants.</p>
+      <p><b>FILIPINO WHO STUDIED ABROAD.</b> A Filipino applicant who studied in a non-Philippine school abroad.</p>
+      <p><b>Reminders:</b><br>Filipinos who studied from Philippine Schools Overseas should apply as Freshman, while Filipinos who studied from non-Philippine Schools Overseas should apply as Filipino who studied abroad.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="campus">
+        <b>MANILA CAMPUS</b>
+        9 Mendiola St., San Miguel, Manila City
+      </div>
+      <div class="campus">
+        <b>MAKATI CAMPUS</b>
+        259 Senator Gil Puyat Ave., Makati City<br />
+        103 Esteban St., Legazpi Village, Makati City
+      </div>
+      <div class="campus">
+        <b>MALOLOS CAMPUS</b>
+        Km 44 McArthur Highway, City of Malolos, Bulacan
+      </div>
+      <div class="connect">
+        <b>CONNECT WITH US</b>
+        <div class="social">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        </div>
+        <div class="privacy">CEU WEBSITE PRIVACY NOTICE</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      Copyright 2025. Centro Escolar University. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>

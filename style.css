@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+.topbar {
+  background-color: #f06292;
+  height: 35px;
+  display: none; 
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #21125e;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.logo {
+  height: 70px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav a.active {
+  border-bottom: 2px solid #f06292;
+  padding-bottom: 3px;
+}
+
+.menu-extra-wrap {
+  display: none; 
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.login-box {
+  background-color: #f3f8fe;
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login-box h2 .pink {
+  color: #f06292;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.required {
+  color: red;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #f06292;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-box button:hover {
+  background-color: #e34b7b;
+}
+
+.login-box .forgot {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #21125e;
+  color: #fff;
+  margin-top: 40px;
+  font-size: 13px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.campus {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.campus b {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.connect {
+  flex: 1;
+  min-width: 200px;
+}
+
+.social {
+  margin: 10px 0;
+}
+
+.social a img {
+  width: 30px;
+  margin: 0 5px;
+}
+
+.privacy {
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  text-align: left;
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+
+  .topbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f06292;
+    height: 40px;
+    padding: 0 15px;
+  }
+
+  .topbar .hamburger {
+    display: block;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 6px;
+  }
+
+  .logo {
+    height: 60px;
+    margin-left: 0;
+  }
+
+  nav {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    width: 100%;
+    background: #21125e;
+    padding: 8px 10px;
+  }
+
+  nav a {
+    display: inline-block; 
+    font-size: 14px;
+    padding: 6px 8px;
+    white-space: nowrap;
+  }
+
+  .menu-extra-wrap {
+    display: none;
+    width: 100%;
+  }
+
+  .menu-extra {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  nav.show .menu-extra-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 6px;
+    background: #21125e;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .campus, .connect {
+    margin-bottom: 20px;
+  }
+}
